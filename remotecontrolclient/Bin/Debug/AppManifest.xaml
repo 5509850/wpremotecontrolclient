@@ -1,0 +1,10 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="remotecontrolclient" EntryPointType="remotecontrolclient.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="remotecontrolclient" Source="remotecontrolclient.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="SOMAWP8" Source="SOMAWP8.dll" />
+    <AssemblyPart x:Name="WinPhoneFtp.FtpService" Source="WinPhoneFtp.FtpService.dll" />
+    <AssemblyPart Source="be-BY/remotecontrolclient.resources.dll" />
+    <AssemblyPart Source="ru-RU/remotecontrolclient.resources.dll" />
+  </Deployment.Parts>
+</Deployment>

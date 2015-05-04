@@ -1,0 +1,837 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="remotecontrolclient.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
+    <Grid x:Name="LayoutRoot" Background="Transparent" RenderTransformOrigin="2,0">
+        <Image x:Name="background"  Stretch="Fill" VerticalAlignment="Top" Margin="0, 0,0,0" Grid.Row="0" IsHitTestVisible="False" Source="/Assets/bg.screen-wvga.jpg" />       
+        <!-- ПРИМЕЧАНИЕ О ЛОКАЛИЗАЦИИ:
+            Чтобы локализовать отображаемые строки, скопируйте их значения в соответствующим образом названные
+            ключи в файле ресурсов нейтрального языка приложения (AppResources.resx), а затем
+            замените жестко заданное текстовое значение между кавычками атрибутов
+            на выражение привязки, указывающее на имя соответствующей строки.
+
+            Пример:
+
+                Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource LocalizedStrings}}"
+
+            Данная привязка указывает на строковый ресурс шаблона с именем "ApplicationTitle".
+
+            Добавление поддерживаемых языков на вкладку "Свойства проекта" создает
+            новый RESX-файл для каждого языка, в котором могут храниться переведенные значения
+            строк пользовательского интерфейса. Привязка в этих примерах вызывает отрисовку
+            значений атрибутов из RESX-файла, соответствующего
+            CurrentUICulture приложения во время выполнения.
+         -->
+
+        <!--Элемент управления Pivot   "ПУЛЬТ ПК"-->
+        <phone:Pivot x:Name="pivot" Title= "{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource 
+LocalizedStrings}}">
+            <!--Первый элемент Pivot "Видео" -->
+            <phone:PivotItem Header= "{Binding Path=LocalizedResources.Video, Source={StaticResource 
+LocalizedStrings}}">
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,-30,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="17*" />
+                        <RowDefinition Height="12*" />
+                        <RowDefinition Height="14*" />
+                        <RowDefinition Height="27*" />
+                        <RowDefinition Height="14*" />
+                        <RowDefinition Height="14*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="29*" />
+                        <ColumnDefinition Width="42*" />
+                        <ColumnDefinition Width="29*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button  Grid.Row="0" Grid.Column="0"
+                            x:Name="but_mute" Margin="-5"
+                            Click="but_mute_Click" BorderThickness="0"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\01_mute_pc.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="1" BorderThickness="0" FontSize="18" 
+                        x:Name="textblockIP" Content="{Binding Path=LocalizedResources.wifioff, Source={StaticResource LocalizedStrings}}" Click="textblockIP_Click" >
+                        <Button.Background>
+                            <ImageBrush  x:Name="ib" ImageSource="images\02_network_status.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="2" 
+                            x:Name="but_vlcmute" Margin="-5"
+                            BorderThickness="0" Click="but_vlcmute_Click"    >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\03_mute_player.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button  Grid.Row="1" Grid.Column="0"
+                    x:Name="but_lock" Margin="-5"
+                             BorderThickness="0" Click="but_lock_Click"  >
+                    <Button.Background>
+                            <ImageBrush ImageSource="images\04_lock.png"/>
+                    </Button.Background>
+                    </Button>
+
+
+
+                    <HyperlinkButton  Grid.Row="1" Grid.Column="1"
+                        Margin="-5"
+                            x:Name="but_power" Click="but_power_Click"   
+                            >
+                        <HyperlinkButton.Background>
+                            <ImageBrush  ImageSource="images\05_power_manage.png"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+                    
+                    <Button  Grid.Row="1" Grid.Column="2"
+                             Margin="-5"
+                    x:Name="vol_percent" 
+                             BorderThickness="0" Click="vol_percent_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\06_vol_percent.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <Button Grid.Row="2" Grid.Column="0"                         
+                            x:Name="but_time" 
+                            Margin="-5"
+                            BorderThickness="0" Click="but_time_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\07_show_time.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="2" Grid.Column="1"                        
+                            x:Name="but_volup"  Margin="-5"
+                            BorderThickness="0" Click="but_volup_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\08_vol_up.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="2" Grid.Column="2"
+                            x:Name="but_timer" Margin="-5"
+                            BorderThickness="0" Click="but_timer_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\09_timer.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="3" Grid.Column="0"
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_rew" 
+                             Click="but_rew_Click" DoubleTap="but_rew_DoubleTap" Hold="but_rew_Hold"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\10_prev_track_rd.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="3" Grid.Column="1"                            
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_play" 
+                             Click="but_play_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\11_play.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="3" Grid.Column="2" 
+                            BorderThickness="0"
+                            x:Name="but_ff" 
+                             Click="but_ff_Click"  Margin="-5" DoubleTap="but_ff_DoubleTap" Hold="but_ff_Hold"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\12_next_track_rd.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="4" Grid.Column="0"
+                            x:Name="but_prev" Margin="-5"
+                            BorderThickness="0" Click="but_prev_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\13_prev.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <Button Grid.Row="4" Grid.Column="1"
+                            x:Name="but_voldwn" Margin="-5"
+                            BorderThickness="0" Click="but_voldwn_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\14_vol_down.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="4" Grid.Column="2"
+                            x:Name="but_next" Margin="-5"
+                            BorderThickness="0" Click="but_next_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\15_next.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="5" Grid.Column="0"
+                            x:Name="but_playlst" Margin="-5"
+                            BorderThickness="0" Click="but_playlst_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\13_playlist.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    
+
+                    <Button Grid.Row="5" Grid.Column="1"
+                            x:Name="but_monitor" Margin="-5"
+                            BorderThickness="0" Click="but_monitor_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\17_monitor.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="5" Grid.Column="2"
+                            x:Name="but_fullscreenv" Margin="-5"
+                            BorderThickness="0" Click="but_fullscreenv_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\15_full_screen.png"/>
+                        </Button.Background>
+                    </Button>
+
+                   
+
+                    <Grid x:Name="ads1" Grid.Row="6" Grid.ColumnSpan="3"/>
+                </Grid>
+            </phone:PivotItem>
+
+            <!--Второй элемент Pivot MUSIC-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.music, Source={StaticResource 
+LocalizedStrings}}">
+
+                <Grid x:Name="ContentPanel2" Grid.Row="1" Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="15*" />
+                        <RowDefinition Height="17*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="17*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="29*" />
+                        <ColumnDefinition Width="42*" />
+                        <ColumnDefinition Width="29*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button  Grid.Row="0" Grid.Column="0"
+                            x:Name="but_mute2" Margin="-5"
+                            Click="but_mute_Click" BorderThickness="0"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\01_mute_pc.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="1" BorderThickness="0"  FontSize="18"
+                        x:Name="textblockIP2" Content="{Binding Path=LocalizedResources.wifioff, Source={StaticResource LocalizedStrings}}" Click="textblockIP_Click" >
+                        <Button.Background>
+                            <ImageBrush x:Name="ib2" ImageSource="images\02_network_status.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="2" 
+                            x:Name="but_vlcmute2" Margin="-5"
+                            BorderThickness="0" Click="but_vlcmutemusic_Click"    >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\03_mute_player.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button  Grid.Row="1" Grid.Column="0"
+                    x:Name="but_lock2" Margin="-5"
+                             BorderThickness="0" Click="but_lock_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\04_lock.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <HyperlinkButton  Grid.Row="1" Grid.Column="1"
+                        Margin="-5"
+                            x:Name="but_power2" Click="but_power2_Click" 
+                            >
+                        <HyperlinkButton.Background>
+                            <ImageBrush  ImageSource="images\05_power_manage.png"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+
+                    <Button  Grid.Row="1" Grid.Column="2"
+                             Margin="-5"
+                    x:Name="vol_percent2" 
+                             BorderThickness="0" Click="vol_percent_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\06_vol_percent.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <Button Grid.Row="2" Grid.Column="0"                         
+                            x:Name="but_time2" 
+                            Margin="-5"
+                            BorderThickness="0" Click="but_time_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\07_show_time.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="2" Grid.Column="1"                        
+                            x:Name="but_volup2"  Margin="-5"
+                            BorderThickness="0" Click="but_volup2_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\08_vol_up.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="2" Grid.Column="2"
+                            x:Name="but_timer2" Margin="-5"
+                            BorderThickness="0" Click="but_timer_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\09_timer.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="3" Grid.Column="0"
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_rew2" 
+                             Click="but_prev2_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\10_prev_track.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="3" Grid.Column="1"                            
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_play2" 
+                             Click="but_playmusic_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\11_play.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="3" Grid.Column="2" 
+                            BorderThickness="0"
+                            x:Name="but_ff2" 
+                             Click="but_nextmusic_Click"  Margin="-5" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\12_next_track.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="4" Grid.Column="0"
+                            x:Name="but_playlst2" Margin="-5"
+                            BorderThickness="0" Click="but_playlstmusic_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\13_playlist.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="4" Grid.Column="1"
+                            x:Name="but_voldwn2" Margin="-5"
+                            BorderThickness="0" Click="but_voldwnmusic_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\14_vol_down.png"/>
+                        </Button.Background>
+                    </Button>
+                    
+
+                    <Button Grid.Row="4" Grid.Column="2"
+                            x:Name="but_pause2" Margin="-5"
+                            BorderThickness="0" Click="but_pause_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\15_pause.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Grid x:Name="ads2" Grid.Row="5" Grid.ColumnSpan="3"/>
+
+                </Grid>
+
+            </phone:PivotItem>
+
+            <!--Третий элемент Фото-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.photo, Source={StaticResource 
+LocalizedStrings}}">
+                <!--Двухстрочный список с разбивкой текста на строки-->
+                <Grid x:Name="ContentPanel3" Grid.Row="1" Margin="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="15*" />
+                        <RowDefinition Height="17*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="17*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="29*" />
+                        <ColumnDefinition Width="42*" />
+                        <ColumnDefinition Width="29*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button  Grid.Row="0" Grid.Column="0"
+                            x:Name="but_prevfolderpic" Margin="-5"
+                            Click="but_prevfolderpic_Click" BorderThickness="0"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\01_prev.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="1" BorderThickness="0"  FontSize="18"
+                        x:Name="textblockIP3" Content="{Binding Path=LocalizedResources.wifioff, Source={StaticResource LocalizedStrings}}" Click="textblockIP_Click" >
+                        <Button.Background>
+                            <ImageBrush  x:Name="ib3" ImageSource="images\02_network_status.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="2" 
+                            x:Name="but_nextfolderpic" Margin="-5"
+                            BorderThickness="0" Click="but_nextfolderpic_Click"    >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\03_next.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button  Grid.Row="1" Grid.Column="0"
+                    x:Name="but_lock3" Margin="-5"
+                             BorderThickness="0" Click="but_lock_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\04_lock.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <HyperlinkButton  Grid.Row="1" Grid.Column="1"
+                        Margin="-5"
+                            x:Name="but_power3" Click="but_power3_Click"   
+                            >
+                        <HyperlinkButton.Background>
+                            <ImageBrush  ImageSource="images\05_power_manage.png"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+
+                    <Button  Grid.Row="1" Grid.Column="2"
+                             Margin="-5"
+                    x:Name="pic_close" 
+                             BorderThickness="0" Click="but_photoclose_Click" Hold="pic_close_Hold" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\06_close.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <Button Grid.Row="2" Grid.Column="0"                         
+                            x:Name="but_time3" 
+                            Margin="-5"
+                            BorderThickness="0" Click="but_time_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\07_show_time.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="2" Grid.Column="1"                        
+                            x:Name="but_zoomin"  Margin="-5"
+                            BorderThickness="0" Click="but_zoomin_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\08_vol_up.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="2" Grid.Column="2"
+                            x:Name="but_timer3" Margin="-5"
+                            BorderThickness="0" Click="but_timer_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\09_timer.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="3" Grid.Column="0"
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_prevpic" 
+                             Click="but_prevpic_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\10_prev_track.png"/>
+                        </Button.Background>
+                    </Button>                    
+
+                    <Button Grid.Row="3" Grid.Column="1"                            
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_picslideshow" 
+                             Click="but_picslideshow_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\11_play.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="3" Grid.Column="2" 
+                            BorderThickness="0"
+                            x:Name="but_nextpic" 
+                             Click="but_nextpic_Click"  Margin="-5" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\12_next_track.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="4" Grid.Column="0"
+                            x:Name="but_playlst3" Margin="-5"
+                            BorderThickness="0" Click="but_playlstphoto_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\13_playlist.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="4" Grid.Column="1"
+                            x:Name="but_zoomout" Margin="-5"
+                            BorderThickness="0" Click="but_zoomout_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\14_vol_down.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="4" Grid.Column="2"
+                            x:Name="but_fullscreenp" Margin="-5"
+                            BorderThickness="0" Click="but_fullscreenp_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\15_full_screen.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Grid x:Name="ads3" Grid.Row="5" Grid.ColumnSpan="3"/>
+
+
+                </Grid>
+
+            </phone:PivotItem>
+
+
+            <!--Четвертый элемент Pivot ТВ-->
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.tv, Source={StaticResource 
+LocalizedStrings}}">
+                <Grid x:Name="ContentPanel4" Grid.Row="1" Margin="0,0,0,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20*" />
+                        <RowDefinition Height="15*" />
+                        <RowDefinition Height="17*" />
+                        <RowDefinition Height="30*" />
+                        <RowDefinition Height="17*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="29*" />
+                        <ColumnDefinition Width="42*" />
+                        <ColumnDefinition Width="29*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button  Grid.Row="0" Grid.Column="0"
+                            x:Name="but_mute4" Margin="-5"
+                            Click="but_mute_Click" BorderThickness="0"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\01_mute_pc.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="1" BorderThickness="0"  FontSize="18"
+                        x:Name="textblockIP4" Content="{Binding Path=LocalizedResources.wifioff, Source={StaticResource LocalizedStrings}}" Click="textblockIP_Click" >
+                        <Button.Background>
+                            <ImageBrush  x:Name="ib4" ImageSource="images\02_network_status.screen-wxga.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="0" Grid.Column="2" 
+                            x:Name="but_tvmute" Margin="-5"
+                            BorderThickness="0" Click="but_vlcmutetv_Click"    >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\03_mute_player.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button  Grid.Row="1" Grid.Column="0"
+                    x:Name="but_lock4" Margin="-5"
+                             BorderThickness="0" Click="but_lock_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\04_lock.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <HyperlinkButton  Grid.Row="1" Grid.Column="1"
+                        Margin="-5"
+                            x:Name="but_TVpower" Click="but_TVpower_Click" Hold="but_TVpower_Hold"   
+                            >
+                        <HyperlinkButton.Background>
+                            <ImageBrush  ImageSource="images\05_power_manage.png"/>
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+
+                    <Button  Grid.Row="1" Grid.Column="2"
+                             Margin="-5"
+                    x:Name="vol_percent4" 
+                             BorderThickness="0" Click="vol_percent_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\06_vol_percent.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+
+                    <Button Grid.Row="2" Grid.Column="0"                         
+                            x:Name="but_time4" 
+                            Margin="-5"
+                            BorderThickness="0" Click="but_time_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\07_show_time.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="2" Grid.Column="1"                        
+                            x:Name="but_volup4"  Margin="-5"
+                            BorderThickness="0" Click="but_voluptv_Click" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\08_vol_up.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="2" Grid.Column="2"
+                            x:Name="but_timer4" Margin="-5"
+                            BorderThickness="0" Click="but_timer_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\09_timer.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="3" Grid.Column="0"
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_TVprev" 
+                             Click="but_chdwntv_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\10_prev_track.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="3" Grid.Column="1"                            
+                            BorderThickness="0"
+                             Margin="-5" 
+                            x:Name="but_play4" 
+                             Click="but_fulloktv_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\11_fullscreen.png"/>
+                        </Button.Background>
+                    </Button>                   
+
+                    <Button Grid.Row="3" Grid.Column="2" 
+                            BorderThickness="0"
+                            x:Name="but_nextTvChn" 
+                             Click="but_chuptv_Click"  Margin="-5" >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\12_next_track.png"/>
+                        </Button.Background>
+                    </Button>
+
+
+                    <Button Grid.Row="4" Grid.Column="0"
+                            x:Name="but_tvosd" Margin="-5"
+                            BorderThickness="0" Click="but_channeltv_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\13_playlist_rd.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="4" Grid.Column="1"
+                            x:Name="but_voldwn4" Margin="-5"
+                            BorderThickness="0" Click="but_voldwntv_Click"  >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\14_vol_down.png"/>
+                        </Button.Background>
+                    </Button>
+
+                    <Button Grid.Row="4" Grid.Column="2"
+                            x:Name="but_channel" Margin="-5"
+                            BorderThickness="0" Click="but_channel_Click"   >
+                        <Button.Background>
+                            <ImageBrush ImageSource="images\15_channel.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Grid x:Name="ads4" Grid.Row="5" Grid.ColumnSpan="3"/>
+
+                </Grid>
+
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.setting, Source={StaticResource 
+LocalizedStrings}}">
+                <Grid ShowGridLines="False" Margin="0,-20,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="230" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <RadioButton Grid.Column="0" Grid.Row="0"
+                        x:Name="radiobut_udp"
+                                 Content="UDP (windows7)"
+                                 IsChecked="True" GroupName="type" />
+                    <RadioButton Grid.Column="1" Grid.Row="0"
+                        x:Name="radiobut_ftp"
+                                 Content="FTP (windows8)" GroupName="type" 
+                                 Checked="radiobut_ftp_Checked" Unchecked="radiobut_ftp_Unchecked" />
+                    <TextBlock  Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left"
+                        x:Name="tb_ip" Text="{Binding Path=LocalizedResources.ip, Source={StaticResource 
+LocalizedStrings}}" FontSize="30" FontWeight="Bold"  />
+                    <TextBox  Grid.Column="1" Grid.Row="1"
+                        x:Name ="TextBoxIp"  Height="72" TextWrapping="Wrap" 
+                              Text="192.168.1.0" Width="240" HorizontalAlignment="Left" TextChanged="TextBoxIp_TextChanged" />
+                    <TextBlock  Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                Visibility="Collapsed"
+                        x:Name="tb_code" Text="{Binding Path=LocalizedResources.code, Source={StaticResource 
+LocalizedStrings}}" FontSize="30" FontWeight="Bold"  />
+                    <CheckBox  Grid.Column="1" Grid.Row="3" Visibility="Collapsed"
+                        x:Name="cb_code_auto" IsChecked = "True" Content="{Binding Path=LocalizedResources.autocode, Source={StaticResource 
+LocalizedStrings}}" Checked="cb_code_auto_Checked" Unchecked="cb_code_auto_Unchecked"  />
+                    <TextBox  Grid.Column="1" Grid.Row="2"          
+                              Visibility="Collapsed"
+                        x:Name ="TextBoxCode" Height="72" Width="240" TextWrapping="Wrap" Text="19216810"
+                             HorizontalAlignment="Left" IsReadOnly="True"/>
+                    <CheckBox  Grid.Column="0" Grid.Row="3" 
+                        x:Name="cb_ip_all" IsChecked = "True" Content="{Binding Path=LocalizedResources.allip, Source={StaticResource 
+LocalizedStrings}}" Checked="cb_ip_all_Checked" Unchecked="cb_ip_all_Unchecked"   />
+
+                    <TextBlock  Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Left"
+                        x:Name="tb_mac" Text="{Binding Path=LocalizedResources.mac, Source={StaticResource 
+LocalizedStrings}}" FontSize="30" FontWeight="Bold"  />
+                    <TextBlock  Grid.Column="1" Grid.Row="5" VerticalAlignment="Top" HorizontalAlignment="Center"
+                        x:Name="tb_mac2" Text="{Binding Path=LocalizedResources.mac2, Source={StaticResource 
+LocalizedStrings}}"  FontSize="16"  />
+                    <TextBox  Grid.Column="1" Grid.Row="4"
+                        x:Name ="TextBoxMac" Height="72" Width="240" TextWrapping="Wrap" Text="XX:XX:XX:XX:XX:XX" 
+                             HorizontalAlignment="Left"/>
+                    <RadioButton  Grid.Column="0" Grid.Row="6"
+                        x:Name="radiobut_tema" Content="{Binding Path=LocalizedResources.topic, Source={StaticResource 
+LocalizedStrings}}" 
+                                   Checked="radiobut_topic_Checked"
+                                    GroupName="back" IsChecked="True" FontSize="36" FontWeight="Bold"/>
+                    <RadioButton  Grid.Column="1" Grid.Row="6"
+                        x:Name="radiobut_backcat" Content="{Binding Path=LocalizedResources.cat, Source={StaticResource 
+LocalizedStrings}}" 
+                                   Checked="radiobut_backcat_Checked" GroupName="back"/>
+                    <RadioButton Grid.Column="0" Grid.Row="7" HorizontalAlignment="Left"
+                        x:Name="radiobut_backgoa" Content="{Binding Path=LocalizedResources.goa, Source={StaticResource 
+LocalizedStrings}}" Checked="radiobut_backgoa_Checked" GroupName="back"/>
+                    <RadioButton Grid.Column="1" Grid.Row="7"                        
+                        x:Name="radiobut_backminsk" Content="{Binding Path=LocalizedResources.minsk, Source={StaticResource 
+LocalizedStrings}}" GroupName="back" Checked="radiobut_backminsk_Checked"/>
+                    <RadioButton Grid.Column="0" Grid.Row="8"                        
+                        x:Name="radiobut_backstambul" Content="{Binding Path=LocalizedResources.stambul, Source={StaticResource 
+LocalizedStrings}}" GroupName="back" Checked="radiobut_backstambul_Checked" />
+                    <RadioButton Grid.Column="1" Grid.Row="8"                        
+                        x:Name="radiobut_dubai" Content="{Binding Path=LocalizedResources.dubai, Source={StaticResource 
+LocalizedStrings}}" GroupName="back" Checked="radiobut_dubai_Checked" />
+
+
+                    <TextBlock  Grid.Row="9" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center"  Margin="0,20,0,0" 
+                        x:Name="tb_player" Text="{Binding Path=LocalizedResources.videoselect, Source={StaticResource 
+LocalizedStrings}}" FontSize="30" FontWeight="Bold" Tap="tb_player_Tap"  />                    
+
+
+                    <CheckBox  Grid.Column="0" Grid.Row="5"  VerticalAlignment="Top"
+                        x:Name="cb_vibro" IsChecked = "True" Content="{Binding Path=LocalizedResources.vibro, Source={StaticResource 
+LocalizedStrings}}"  />
+                    
+                  <!--  <CheckBox  Grid.Column="0" Grid.Row="8"  VerticalAlignment="Top"
+                        x:Name="cb_" IsChecked = "True" Content=""  />
+                    -->
+
+                </Grid>
+
+            </phone:PivotItem>
+
+            <phone:PivotItem Header="{Binding Path=LocalizedResources.about, Source={StaticResource 
+LocalizedStrings}}" Margin="0,10,0,0 ">
+                <StackPanel >
+                    <TextBlock x:Name="tb_about" TextWrapping="Wrap" Width="Auto" Text="{Binding Path=LocalizedResources.about1, Source={StaticResource 
+LocalizedStrings}}" FontStyle="Italic" Style="{StaticResource PhoneTextSubtleStyle}" Tap="Image_Tap"/>
+                    <Image  Source="/images/about.png" Stretch="None" Tap="Image_Tap"/>
+                    <TextBlock x:Name="tb_about2" TextWrapping="Wrap" 
+Text="{Binding Path=LocalizedResources.about2, Source={StaticResource 
+LocalizedStrings}}" 
+                    FontStyle="Italic" Style="{StaticResource PhoneTextSubtleStyle}" Margin="0,0,0,0" Tap="tb_about2_Tap"/>
+                    <TextBlock x:Name="tb_about3" Text="v 1.1.0.4 © alexsoft.in,  2014" Margin="0,20,0,0" HorizontalAlignment="Center"></TextBlock>
+
+
+                </StackPanel>
+            </phone:PivotItem>
+
+
+
+        </phone:Pivot>
+
+
+        <!--Второй элемент Pivot-->
+
+
+        <!--Раскомментируйте, чтобы увидеть сетку выравнивания и выровнять
+            элементы управления по общим границам.  Верхнее поле изображения равно -32 пикселя, чтобы
+            осталось место для области уведомлений. Установите его равным 0 (или вообще удалите поле),
+            если область уведомлений скрыта.
+
+            Перед сдачей приложения удалите этот код XAML и само изображение.-->
+        <!--  <Image Source="/Assets/AlignmentGrid.png" VerticalAlignment="Top" Height="800" Width="480" Margin="0,-32,0,0" Grid.Row="0" IsHitTestVisible="False" /> -->
+
+    </Grid>
+
+</phone:PhoneApplicationPage>

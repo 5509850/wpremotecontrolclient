@@ -1,0 +1,4 @@
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\Bin\Release\WinPhoneFtp.FtpService.dll
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\Bin\Release\WinPhoneFtp.FtpService.pdb
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\obj\Release\WinPhoneFtp.FtpService.dll
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\obj\Release\WinPhoneFtp.FtpService.pdb

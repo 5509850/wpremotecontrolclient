@@ -1,0 +1,108 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="remotecontrolclient.TimerMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot представляет корневую сетку, где размещается все содержимое страницы-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush x:Name="background"  Stretch="Fill" ImageSource="/Assets/bg.screen-wvga.jpg"/>
+        </Grid.Background>
+        <!--TitlePanel содержит имя приложения и заголовок страницы-->
+        <StackPanel Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock Text="{Binding Path=LocalizedResources.ApplicationTitle, Source={StaticResource 
+LocalizedStrings}}" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.timer, Source={StaticResource 
+LocalizedStrings}}" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+            <TextBlock Text="{Binding Path=LocalizedResources.timeoff, Source={StaticResource 
+LocalizedStrings}}" HorizontalAlignment="Center" Style="{StaticResource PhoneTextNormalStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel – поместите здесь дополнительное содержимое-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="20,-20,20,0">
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="bt_off" Content="{Binding Path=LocalizedResources.offtimer, Source={StaticResource 
+LocalizedStrings}}" Click="bt_off_Click"  />
+                
+                <StackPanel>
+                    <RadioButton 
+                        x:Name="radiobut_POFF"
+                                 Content="{Binding Path=LocalizedResources.poweroff, Source={StaticResource 
+LocalizedStrings}}"
+                                 IsChecked="True" GroupName="type" />
+                    <RadioButton
+                        x:Name="radiobut_Hibernate"
+                                 Content="{Binding Path=LocalizedResources.hibernate, Source={StaticResource 
+LocalizedStrings}}"   GroupName="type" Checked="radiobut_Hibernate_Checked" Unchecked="radiobut_Hibernate_Unchecked" 
+                                 />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button  Content="" BorderThickness="0" Width="150"/>
+                    <Button Content="" BorderThickness="0" Width="150"/>
+                    <Button Content="" BorderThickness="0" Width="150"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="bt_m1" Content="{Binding Path=LocalizedResources.min1, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m1_Click"/>
+                    <Button x:Name="bt_m3" Content="{Binding Path=LocalizedResources.min3, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m3_Click"/>
+                    <Button x:Name="bt_m5" Content="{Binding Path=LocalizedResources.min5, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m5_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="bt_m10" Content="{Binding Path=LocalizedResources.min10, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m10_Click"/>
+                    <Button x:Name="bt_m20" Content="{Binding Path=LocalizedResources.min20, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m20_Click"/>
+                    <Button x:Name="bt_m30" Content="{Binding Path=LocalizedResources.min30, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m30_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="bt_m45" Width="150" Content="{Binding Path=LocalizedResources.min45, Source={StaticResource 
+LocalizedStrings}}" Click="bt_m45_Click" />
+                    <Button x:Name="bt_m60" Width="150" Content="{Binding Path=LocalizedResources.min60, Source={StaticResource 
+LocalizedStrings}}" Click="bt_m60_Click" />
+                    <Button x:Name="bt_m90" Width="150" Content="{Binding Path=LocalizedResources.min90, Source={StaticResource 
+LocalizedStrings}}" Click="bt_m90_Click" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="bt_m120" Content="{Binding Path=LocalizedResources.min120, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m120_Click"/>
+                    <Button x:Name="bt_m150" Content="{Binding Path=LocalizedResources.min150, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m150_Click"/>
+                    <Button x:Name="bt_m180" Content="{Binding Path=LocalizedResources.min180, Source={StaticResource 
+LocalizedStrings}}" Width="150" Click="bt_m180_Click"/>
+                </StackPanel>
+
+                
+               
+              
+
+                <HyperlinkButton Height="90" Width="200" VerticalAlignment="Bottom"
+                            x:Name="but_back"  
+                            BorderThickness="0" Click="but_back_Click" >
+                    <HyperlinkButton.Background>
+                        <ImageBrush ImageSource="images\back.png"/>
+                    </HyperlinkButton.Background>
+                </HyperlinkButton>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

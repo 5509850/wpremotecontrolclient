@@ -1,0 +1,361 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5C512C79-CDF7-4085-A249-8002C3C1591F}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>remotecontrolclient</RootNamespace>
+    <AssemblyName>remotecontrolclient</AssemblyName>
+    <TargetFrameworkIdentifier>WindowsPhone</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>ru-RU;be-BY</SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>remotecontrolclient_$(Configuration)_$(Platform).xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>remotecontrolclient.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\x86\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\x86\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|ARM' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\ARM\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|ARM' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\ARM\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChMenu.xaml.cs">
+      <DependentUpon>ChMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedStrings.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MasterVolume.xaml.cs">
+      <DependentUpon>MasterVolume.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MultiResImageChooser.cs" />
+    <Compile Include="musicsearch.xaml.cs">
+      <DependentUpon>musicsearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="myFTP.cs" />
+    <Compile Include="myNetworkInterface.cs" />
+    <Compile Include="MyUDP.cs" />
+    <Compile Include="photosearch.xaml.cs">
+      <DependentUpon>photosearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PowerMenu.xaml.cs">
+      <DependentUpon>PowerMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResolutionHelper.cs" />
+    <Compile Include="Resources\AppResources.be-BY.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.be-BY.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\AppResources.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppResources.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TimerMenu.xaml.cs">
+      <DependentUpon>TimerMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="videosearch.xaml.cs">
+      <DependentUpon>videosearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="ChMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignData Include="SampleData\MainViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <Page Include="MasterVolume.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="musicsearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="photosearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PowerMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TimerMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="videosearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AlignmentGrid.png" />
+    <Content Include="Assets\ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\backblack.jpg" />
+    <Content Include="Assets\backblack2.jpg" />
+    <Content Include="Assets\backdubai.jpg" />
+    <Content Include="Assets\backdubai2.jpg" />
+    <Content Include="Assets\backgoa.jpg" />
+    <Content Include="Assets\backgoa2.jpg" />
+    <Content Include="Assets\backminsk.jpg" />
+    <Content Include="Assets\backminsk2.jpg" />
+    <Content Include="Assets\backstambul.jpg" />
+    <Content Include="Assets\backstambul2.jpg" />
+    <Content Include="Assets\bg.screen-wvga.jpg" />
+    <Content Include="Assets\bg2.screen-wvga.jpg" />
+    <Content Include="Assets\Tiles\FlipCycleTileLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileMedium.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\FlipCycleTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileMediumLarge.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Tiles\IconicTileSmall.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\01_button_99.png" />
+    <Content Include="images\01_mute_pc.screen-wxga.png" />
+    <Content Include="images\01_prev.png" />
+    <Content Include="images\02_button_77.png" />
+    <Content Include="images\02_network_status.screen-wxga.png" />
+    <Content Include="images\02_network_status2.screen-wxga.png" />
+    <Content Include="images\03_button_55.png" />
+    <Content Include="images\03_mute_player.png" />
+    <Content Include="images\03_next.png" />
+    <Content Include="images\04_button_33.png" />
+    <Content Include="images\04_lock.png" />
+    <Content Include="images\05_button_25.png" />
+    <Content Include="images\05_power_manage.png" />
+    <Content Include="images\06_button_18.png" />
+    <Content Include="images\06_close.png" />
+    <Content Include="images\06_vol_percent.png" />
+    <Content Include="images\07_button_7.png" />
+    <Content Include="images\07_show_time.png" />
+    <Content Include="images\08_vol_up.png" />
+    <Content Include="images\09_timer.png" />
+    <Content Include="images\10_prev_track.png" />
+    <Content Include="images\10_prev_track_rd.png" />
+    <Content Include="images\11_fullscreen.png" />
+    <Content Include="images\11_play.screen-wxga.png" />
+    <Content Include="images\12_next_track.png" />
+    <Content Include="images\12_next_track_rd.png" />
+    <Content Include="images\13_playlist.png" />
+    <Content Include="images\13_playlist_rd.png" />
+    <Content Include="images\13_prev.png" />
+    <Content Include="images\14_vol_down.png" />
+    <Content Include="images\15_channel.png" />
+    <Content Include="images\15_full_screen.png" />
+    <Content Include="images\15_next.png" />
+    <Content Include="images\15_pause.png" />
+    <Content Include="images\17_monitor.png" />
+    <Content Include="images\about.png" />
+    <Content Include="images\back.png" />
+    <Content Include="images\btnbg4.png" />
+    <Content Include="images\ch.png" />
+    <Content Include="images\chan\c0.png" />
+    <Content Include="images\chan\c1.png" />
+    <Content Include="images\chan\c2.png" />
+    <Content Include="images\chan\c3.png" />
+    <Content Include="images\chan\c4.png" />
+    <Content Include="images\chan\c5.png" />
+    <Content Include="images\chan\c6.png" />
+    <Content Include="images\chan\c7.png" />
+    <Content Include="images\chan\c8.png" />
+    <Content Include="images\chan\c9.png" />
+    <Content Include="images\chan\c_.png" />
+    <Content Include="images\chan\c_back.png" />
+    <Content Include="images\chdown.png" />
+    <Content Include="images\chup.png" />
+    <Content Include="images\closed.png" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\down.png" />
+    <Content Include="images\downfiles.png" />
+    <Content Include="images\ff.png" />
+    <Content Include="images\fullok.png" />
+    <Content Include="images\fullscreen.png" />
+    <Content Include="images\left.png" />
+    <Content Include="images\lft.png" />
+    <Content Include="images\lock.png" />
+    <Content Include="images\mute.png" />
+    <Content Include="images\mutevlc.png" />
+    <Content Include="images\next.png" />
+    <Content Include="images\nexttrack12.png" />
+    <Content Include="images\osd.png" />
+    <Content Include="images\pause.png" />
+    <Content Include="images\pl.png" />
+    <Content Include="images\play.png" />
+    <Content Include="images\play11.png" />
+    <Content Include="images\ply.png" />
+    <Content Include="images\power.png" />
+    <Content Include="images\pre.png" />
+    <Content Include="images\prevtrack10.png" />
+    <Content Include="images\rght.png" />
+    <Content Include="images\right.png" />
+    <Content Include="images\rw.png" />
+    <Content Include="images\sleep.png" />
+    <Content Include="images\start.png" />
+    <Content Include="images\startv.png" />
+    <Content Include="images\stop.png" />
+    <Content Include="images\stopp.png" />
+    <Content Include="images\time.png" />
+    <Content Include="images\timer.png" />
+    <Content Include="images\up.png" />
+    <Content Include="images\upfiles.png" />
+    <Content Include="images\voldown.png" />
+    <Content Include="images\voldowns.png" />
+    <Content Include="images\volup.png" />
+    <Content Include="images\volups.png" />
+    <Content Include="images\zoomin.png" />
+    <Content Include="images\zoomout.png" />
+    <Content Include="SplashScreenImage.Screen-720p.jpg" />
+    <Content Include="SplashScreenImage.Screen-WVGA.jpg" />
+    <Content Include="SplashScreenImage.Screen-WXGA.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\AppResources.be-BY.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.be-BY.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\AppResources.ru-RU.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WinPhoneFtp.FtpService\WinPhoneFtp.FtpService.csproj">
+      <Project>{7FA96A32-BA09-46A8-BC8A-78A2B1C0D95E}</Project>
+      <Name>WinPhoneFtp.FtpService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GoogleAds">
+      <HintPath>..\GoogleAds.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Controls, Version=8.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).$(TargetFrameworkVersion).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\$(TargetFrameworkIdentifier)\$(TargetFrameworkVersion)\Microsoft.$(TargetFrameworkIdentifier).CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

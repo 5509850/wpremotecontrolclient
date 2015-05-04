@@ -1,0 +1,8 @@
+e:\wp8sample\FTP.0913-Final\WinPhoneFtp\WinPhoneFtp.FtpService\Bin\Debug\WinPhoneFtp.FtpService.dll
+e:\wp8sample\FTP.0913-Final\WinPhoneFtp\WinPhoneFtp.FtpService\Bin\Debug\WinPhoneFtp.FtpService.pdb
+e:\wp8sample\FTP.0913-Final\WinPhoneFtp\WinPhoneFtp.FtpService\obj\Debug\WinPhoneFtp.FtpService.dll
+e:\wp8sample\FTP.0913-Final\WinPhoneFtp\WinPhoneFtp.FtpService\obj\Debug\WinPhoneFtp.FtpService.pdb
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\Bin\Debug\WinPhoneFtp.FtpService.dll
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\Bin\Debug\WinPhoneFtp.FtpService.pdb
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\obj\Debug\WinPhoneFtp.FtpService.dll
+E:\Dropbox\FTP_RCS_Client\ONLINE\remotecontrolclient\WinPhoneFtp.FtpService\obj\Debug\WinPhoneFtp.FtpService.pdb

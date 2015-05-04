@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ResourceFlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Controls the FlowDirection for all elements in the RootFrame. Set to the traditional direction of this resource file's language</comment>
+  </data>
+  <data name="ResourceLanguage" xml:space="preserve">
+    <value>en-US</value>
+    <comment>Controls the Language and ensures that the font for all elements in the RootFrame aligns with the app's language. Set to the language code of this resource file's language.</comment>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>REMOTE CONTROL PC</value>
+  </data>
+  <data name="SampleProperty" xml:space="preserve">
+    <value>Пример значения свойства среды выполнения</value>
+  </data>
+  <data name="AppBarButtonText" xml:space="preserve">
+    <value>add</value>
+  </data>
+  <data name="AppBarMenuItemText" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="about" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="music" xml:space="preserve">
+    <value>Music</value>
+  </data>
+  <data name="photo" xml:space="preserve">
+    <value>Photo</value>
+  </data>
+  <data name="setting" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="tv" xml:space="preserve">
+    <value>TV tuner Behold</value>
+  </data>
+  <data name="wifioff" xml:space="preserve">
+    <value>Wi-Fi is OFF</value>
+  </data>
+  <data name="about1" xml:space="preserve">
+    <value>Remote Control PC required installed on the computer RC SERVER. 
+You can download it from the site ALEXSOFT.IN</value>
+  </data>
+  <data name="about2" xml:space="preserve">
+    <value>The program is designed to control your PC from your smartphone via a shared Wi-Fi network. Remote controls playback of movies, music, photos, TV tuner 'Behold TV'. Is a function of scan, sort and search your media files.</value>
+  </data>
+  <data name="allip" xml:space="preserve">
+    <value>All IP (UDP)</value>
+  </data>
+  <data name="autocode" xml:space="preserve">
+    <value>Auto code</value>
+  </data>
+  <data name="cat" xml:space="preserve">
+    <value>cat</value>
+  </data>
+  <data name="code" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="dubai" xml:space="preserve">
+    <value>Dubai</value>
+  </data>
+  <data name="goa" xml:space="preserve">
+    <value>Goa</value>
+  </data>
+  <data name="ip" xml:space="preserve">
+    <value>IP address</value>
+  </data>
+  <data name="mac" xml:space="preserve">
+    <value>MAC address</value>
+  </data>
+  <data name="minsk" xml:space="preserve">
+    <value>Minsk</value>
+  </data>
+  <data name="stambul" xml:space="preserve">
+    <value>Istanbul</value>
+  </data>
+  <data name="topic" xml:space="preserve">
+    <value>BACKGROUND</value>
+  </data>
+  <data name="vibro" xml:space="preserve">
+    <value>Vibro</value>
+  </data>
+  <data name="volblock" xml:space="preserve">
+    <value>Vol. Lock</value>
+  </data>
+  <data name="albums" xml:space="preserve">
+    <value>Albums</value>
+  </data>
+  <data name="allalbum" xml:space="preserve">
+    <value>All album</value>
+  </data>
+  <data name="allfolder" xml:space="preserve">
+    <value>All folder</value>
+  </data>
+  <data name="allrandom" xml:space="preserve">
+    <value>All track random</value>
+  </data>
+  <data name="allscan" xml:space="preserve">
+    <value>Full scan</value>
+  </data>
+  <data name="alltrack" xml:space="preserve">
+    <value>All track</value>
+  </data>
+  <data name="artist" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="artists" xml:space="preserve">
+    <value>Artist</value>
+  </data>
+  <data name="audiofile" xml:space="preserve">
+    <value>Audio files</value>
+  </data>
+  <data name="channel" xml:space="preserve">
+    <value>channel selection</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="fav" xml:space="preserve">
+    <value>Favorite</value>
+  </data>
+  <data name="folder" xml:space="preserve">
+    <value>Folder</value>
+  </data>
+  <data name="hibernate" xml:space="preserve">
+    <value>hibernate</value>
+  </data>
+  <data name="lockscreen" xml:space="preserve">
+    <value>lock scren (screensaver)</value>
+  </data>
+  <data name="min1" xml:space="preserve">
+    <value>1 min</value>
+  </data>
+  <data name="min10" xml:space="preserve">
+    <value>10 min</value>
+  </data>
+  <data name="min120" xml:space="preserve">
+    <value>2 hours</value>
+  </data>
+  <data name="min150" xml:space="preserve">
+    <value>2.5 hours</value>
+  </data>
+  <data name="min180" xml:space="preserve">
+    <value>3 hours</value>
+  </data>
+  <data name="min20" xml:space="preserve">
+    <value>20 min</value>
+  </data>
+  <data name="min3" xml:space="preserve">
+    <value>3 min</value>
+  </data>
+  <data name="min30" xml:space="preserve">
+    <value>30 min</value>
+  </data>
+  <data name="min45" xml:space="preserve">
+    <value>45 min</value>
+  </data>
+  <data name="min5" xml:space="preserve">
+    <value>5 min</value>
+  </data>
+  <data name="min60" xml:space="preserve">
+    <value>1 hour</value>
+  </data>
+  <data name="min90" xml:space="preserve">
+    <value>1.5 hour</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="offtimer" xml:space="preserve">
+    <value>Turn Off Sleep Mode</value>
+  </data>
+  <data name="one" xml:space="preserve">
+    <value>One track</value>
+  </data>
+  <data name="photos" xml:space="preserve">
+    <value>List of photo</value>
+  </data>
+  <data name="playlist" xml:space="preserve">
+    <value>Create playlist</value>
+  </data>
+  <data name="powermenu" xml:space="preserve">
+    <value>Power Menu</value>
+  </data>
+  <data name="poweroff" xml:space="preserve">
+    <value>power OFF</value>
+  </data>
+  <data name="poweron" xml:space="preserve">
+    <value>-=power ON=-</value>
+  </data>
+  <data name="reboot" xml:space="preserve">
+    <value>reboot</value>
+  </data>
+  <data name="scan" xml:space="preserve">
+    <value>Scan</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="shutdown" xml:space="preserve">
+    <value>shutdown</value>
+  </data>
+  <data name="sortby" xml:space="preserve">
+    <value>Sort media files by:</value>
+  </data>
+  <data name="standby" xml:space="preserve">
+    <value>standby</value>
+  </data>
+  <data name="stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="timeoff" xml:space="preserve">
+    <value>PC shutdown over:</value>
+  </data>
+  <data name="timer" xml:space="preserve">
+    <value>Timer menu</value>
+  </data>
+  <data name="versionprogram" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="videofile" xml:space="preserve">
+    <value>Video files</value>
+  </data>
+  <data name="deletephoto" xml:space="preserve">
+    <value>Are you shure you want to delete?</value>
+  </data>
+  <data name="delfile" xml:space="preserve">
+    <value>Deleting a file</value>
+  </data>
+  <data name="delmovies" xml:space="preserve">
+    <value>Remove the film?</value>
+  </data>
+  <data name="ipbad" xml:space="preserve">
+    <value>Error connecting to server - invalid IP address of the server or on the PC is not running RC</value>
+  </data>
+  <data name="ipnotcorret" xml:space="preserve">
+    <value>incorrect IP address!</value>
+  </data>
+  <data name="macnotcorrect" xml:space="preserve">
+    <value>MAC address is incorrect!</value>
+  </data>
+  <data name="networkerror" xml:space="preserve">
+    <value>Uncertain network error!</value>
+  </data>
+  <data name="noip" xml:space="preserve">
+    <value>Error! Not enter correct IP address of server.</value>
+  </data>
+  <data name="volmasteroff" xml:space="preserve">
+    <value>Volume control is disabled</value>
+  </data>
+  <data name="wifinoconnect" xml:space="preserve">
+    <value>Error! Phone is not connected to a Wi-Fi network</value>
+  </data>
+  <data name="wifinointernet" xml:space="preserve">
+    <value>Error! Wi-Fi network without the Internet</value>
+  </data>
+  <data name="wifiofferror" xml:space="preserve">
+    <value>Error!  Wi-Fi is OFF. Need Wi-Fi for work.</value>
+  </data>
+  <data name="volmenu" xml:space="preserve">
+    <value>Master Volume</value>
+  </data>
+  <data name="mac2" xml:space="preserve">
+    <value>(For power ON PC)</value>
+  </data>
+  <data name="driveselect" xml:space="preserve">
+    <value>Select Drive</value>
+  </data>
+  <data name="videoselect" xml:space="preserve">
+    <value>Select Videoplayer</value>
+  </data>
+</root>
